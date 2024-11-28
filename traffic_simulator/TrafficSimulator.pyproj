@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectTypeGuids>{a41c8ea1-112a-4a2d-9f91-29557995525f};{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
+    <ProjectHome>.</ProjectHome>
+    <StartupFile>entrypoint_main.py</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <LaunchProvider>Standard Python launcher</LaunchProvider>
+    <InterpreterPath>C:\BWHacker2023\traffic_simulator\env6\Scripts\python.exe</InterpreterPath>
+    <EnableNativeCodeDebugging>False</EnableNativeCodeDebugging>
+    <IsWindowsApplication>False</IsWindowsApplication>
+    <InterpreterId>MSBuild|env6|$(MSBuildProjectFullPath)</InterpreterId>
+    <TestFramework>Pytest</TestFramework>
+    <SuppressConfigureTestFrameworkPrompt>true</SuppressConfigureTestFrameworkPrompt>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="camera_interface.py" />
+    <Compile Include="camera.py" />
+    <Compile Include="model_functions.py" />
+    <Compile Include="intersection_ml.py" />
+    <Compile Include="intersection_stock.py" />
+    <Compile Include="car.py" />
+    <Compile Include="light_post.py" />
+    <Compile Include="sim_context.py" />
+    <Compile Include="neighborhood.py" />
+    <Compile Include="road_segment.py" />
+    <Compile Include="road_lanes_one_direction.py" />
+    <Compile Include="route.py" />
+    <Compile Include="stats_traffic_registry.py" />
+    <Compile Include="stats_traffic.py" />
+    <Compile Include="traffic_scenario.py" />
+    <Compile Include="volume_pattern.py" />
+    <Compile Include="entrypoint_create_model.py" />
+    <Compile Include="test_model.py" />
+    <Compile Include="entrypoint_main.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="myconstants.py" />
+    <Compile Include="myutils.py" />
+    <Compile Include="ws_functions.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Interpreter Include="env6\">
+      <Id>env6</Id>
+      <Version>3.9</Version>
+      <Description>env6 (Python 3.9 (64-bit))</Description>
+      <InterpreterPath>Scripts\python.exe</InterpreterPath>
+      <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
+      <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
+      <Architecture>X64</Architecture>
+    </Interpreter>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="StartSim.bat" />
+    <Content Include="StartTraining.bat" />
+    <Content Include="TextFile2.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
+  <!-- Uncomment the CoreCompile target to enable the Build command in
+       Visual Studio and specify your pre- and post-build commands in
+       the BeforeBuild and AfterBuild targets below. -->
+  <!--<Target Name="CoreCompile" />-->
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+</Project>
